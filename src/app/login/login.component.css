@@ -1,0 +1,9 @@
+.login .mat-card-header {
+    display: block;
+    text-align: center;
+}
+
+.login-card {
+    box-shadow: none;
+    margin-top: 100px;
+}
