@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, AbstractControl } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { debounceTime } from 'rxjs/operators';
 
@@ -27,7 +28,7 @@ export class LoginComponent implements OnInit {
 		required: 'Please enter your password'
 	}
 
-	constructor(private fb: FormBuilder) {}
+	constructor(private fb: FormBuilder, private router: Router) {}
 
 	ngOnInit(): void {
 
@@ -50,11 +51,12 @@ export class LoginComponent implements OnInit {
 		this.passwordMessage = '';
 
 		if ((c.touched || c.dirty) && c.errors) {
-			// thi	s.passwordMessage = Object.keys(c.errors).map(key => this.passwordValidationMessage[key]).join(' ');
+			// this.passwordMessage = Object.keys(c.errors).map(key => this.passwordValidationMessage[key]).join(' ');
 		}
 	}
 
 	onSubmit(): void {
 		console.log(this.loginForm.value)
+		this.router.navigate(['/dashboard']);
 	}
 }

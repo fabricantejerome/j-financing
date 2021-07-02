@@ -1,0 +1,59 @@
+<div class="container">
+    <mat-card class="client-form-card">
+        <mat-card-header>
+            <mat-card-title>
+                Add New Client
+            </mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content class="client-form-card-content">
+            <form>
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field class="full-width">
+                            <input matInput placeholder="First Name" formControlName="firstname">
+                        </mat-form-field>
+                    </div>
+                    <div class="col">
+                        <mat-form-field class="full-width">
+                            <input matInput placeholder="Last Name" formControlName="lastname">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field class="full-width">
+                            <input matInput placeholder="Mobile Number" formControlName="mobile">
+                        </mat-form-field>
+                    </div>
+                    <div class="col">
+                        <mat-form-field class="full-width">
+                            <input matInput placeholder="Email" formControlName="email">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field class="full-width">
+                            <input matInput placeholder="Address" formControlName="address">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <mat-label>Gender</mat-label>
+                        <mat-radio-group aria-label="Select an option">
+                            <mat-radio-button value="1">Male</mat-radio-button>
+                            <mat-radio-button value="2">Female</mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+                    <div class="col">
+                    </div>
+                </div>
+            </form>
+        </mat-card-content>
+        <mat-card-actions class="text-center">
+            <button mat-raised-button color="primary" type="submit">Submit</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

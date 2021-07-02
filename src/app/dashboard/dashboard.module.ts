@@ -9,14 +9,38 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatCardModule } from '@angular/material/card';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatTableModule } from '@angular/material/table';
+import { MatInputModule } from '@angular/material/input';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+
+import { ApplicationComponent } from './application/application.component';
+import { ClientsComponent } from './clients/clients.component';
+import { ClientFormComponent } from './client-form/client-form.component';
 
 const routes: Routes = [
-	{ path: 'dashboard', component: DashboardComponent },
+	{ 
+		path: 'dashboard', component: DashboardComponent,
+		children: [
+			{ path: 'application', component: ApplicationComponent },
+			{ path: '', redirectTo: 'application', pathMatch: 'full'},
+			{ path: 'clients', component: ClientsComponent },
+			{ path: 'client-form', component: ClientFormComponent },
+		]
+	}
 ];
 
 @NgModule({
 	declarations: [
-		DashboardComponent
+		DashboardComponent,
+  		ApplicationComponent,
+    	ClientsComponent,
+     	ClientFormComponent
 	],
 	imports: [
 		CommonModule,
@@ -27,6 +51,15 @@ const routes: Routes = [
 		MatIconModule,
 		NoopAnimationsModule,
 		MatButtonModule,
+		MatCardModule,
+		MatGridListModule,
+		MatMenuModule,
+		MatPaginatorModule,
+		MatSortModule,
+		MatTableModule,
+		MatInputModule,
+		MatRadioModule,
+		MatDatepickerModule,
 		RouterModule.forChild(routes)
 	]
 })

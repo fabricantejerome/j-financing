@@ -1,0 +1,25 @@
+.container {
+    margin-top: 20px;
+  }
+  
+.clients-card {
+    top: 15px;
+    bottom: 15px;
+    margin: 15px;
+    padding: 30px;
+}
+
+.more-button {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
+
+.application-card-content {
+    text-align: center;
+}
+
+.mat-row {
+    text-align: left;
+}
+  
