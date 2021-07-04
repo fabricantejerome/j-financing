@@ -6,7 +6,6 @@
     top: 15px;
     bottom: 15px;
     margin: 15px;
-    padding: 30px;
 }
 
 .more-button {
@@ -21,5 +20,9 @@
 
 .mat-row {
     text-align: left;
+}
+
+.clients-card-content .mat-form-field {
+    float: right;
 }
   

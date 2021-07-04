@@ -1,9 +1,10 @@
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
 import { ApplicationDataSource, ListItem } from './application-datasource';
 import { MatTableDataSource } from '@angular/material/table';
+
 
 
 @Component({
@@ -36,7 +37,7 @@ export class ApplicationComponent implements AfterViewInit{
 		this.dataSource.filter = filterValue.trim().toLowerCase();
 
 		if (this.dataSource.paginator) {
-		this.dataSource.paginator.firstPage();
+			this.dataSource.paginator.firstPage();
 		}
 	}
 }

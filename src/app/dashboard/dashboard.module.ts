@@ -18,6 +18,9 @@ import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms'
 
 import { ApplicationComponent } from './application/application.component';
 import { ClientsComponent } from './clients/clients.component';
@@ -60,6 +63,9 @@ const routes: Routes = [
 		MatInputModule,
 		MatRadioModule,
 		MatDatepickerModule,
+		HttpClientModule,
+		MatNativeDateModule,
+		ReactiveFormsModule,
 		RouterModule.forChild(routes)
 	]
 })

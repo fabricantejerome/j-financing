@@ -1,10 +1,11 @@
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
-// import { ApplicationDataSource, ListItem } from './application-datasource';
-import { ApplicationDataSource, ListItem } from '../application/application-datasource';
+// import { ClientsDataSource } from './clients-datasource';
 import { MatTableDataSource } from '@angular/material/table';
+import { Client } from 'src/app/interface/client';
+import { ClientService } from 'src/app/services/client.service';
 
 @Component({
 	selector: 'app-clients',
@@ -14,17 +15,19 @@ import { MatTableDataSource } from '@angular/material/table';
 export class ClientsComponent implements AfterViewInit {
 	@ViewChild(MatPaginator) paginator!: MatPaginator;
 	@ViewChild(MatSort) sort!: MatSort;
-	@ViewChild(MatTable) table!: MatTable<ListItem>;
-	dataSource: MatTableDataSource<ListItem>;
+	@ViewChild(MatTable) table!: MatTable<Client>;
+	dataSource = new MatTableDataSource<Client>([]);
 	
 	/** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-	displayedColumns = ['id', 'name', 'address'];
+	displayedColumns = ['id', 'firstname', 'mobile', 'email', 'address'];
 
-	constructor() {
-		this.dataSource = new MatTableDataSource(new ApplicationDataSource().data);
-	}
+	constructor(private clientService: ClientService) {}
 
 	ngAfterViewInit(): void {
+		this.clientService.browse().subscribe(clients => { 
+			this.dataSource.data = clients
+		});
+
 		this.dataSource.sort = this.sort;
 		this.dataSource.paginator = this.paginator;
 		this.table.dataSource = this.dataSource;

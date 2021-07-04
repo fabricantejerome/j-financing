@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators, AbstractControl } from '@angular/forms';
+import { FormBuilder, Validators, AbstractControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { debounceTime } from 'rxjs/operators';
@@ -10,14 +10,11 @@ import { debounceTime } from 'rxjs/operators';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-	hide = true;
-	emailMessage = '';
-	passwordMessage = '';
-
-	loginForm = this.fb.group({
-		email: [null, [Validators.required, Validators.email]],
-		password: [null, Validators.required]
-	});
+	hide: boolean = true;
+	emailMessage: string = '';
+	passwordMessage: string = '';
+	loginForm: FormGroup = new FormGroup({});
+	
 
 	private validationMessages = {
 		required: 'Please enter your email address',
@@ -31,6 +28,10 @@ export class LoginComponent implements OnInit {
 	constructor(private fb: FormBuilder, private router: Router) {}
 
 	ngOnInit(): void {
+		this.loginForm = this.fb.group({
+			email: [null, [Validators.required, Validators.email]],
+			password: [null, Validators.required]
+		});
 
 		const emailControl = this.loginForm.get('email');
 		const passwordControl = this.loginForm.get('password');

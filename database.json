@@ -1,0 +1,47 @@
+{
+  "clients": [
+    {
+      "id": 1,
+      "firstname": "Jerome",
+      "lastname": "Fabricante",
+      "address": "Block 4 Lot 24 Buklod Bahayan Tartaria, Silang, Cavite",
+      "email": "fabricantejerome@gmail.com",
+      "mobile": "09272612690",
+      "gender": "Male",
+      "birthdate": "December 22, 1992",
+      "active": true
+    },
+    {
+      "id": 2,
+      "firstname": "Christopher",
+      "lastname": "Pid",
+      "address": "Block 6 Lot 22 Buklod Bahayan Tartaria, Silang, Cavite",
+      "email": "tophersw@gmail.com",
+      "mobile": "09272612690",
+      "gender": "Male",
+      "birthdate": "November 9, 1993",
+      "active": true
+    },
+    {
+      "id": 3,
+      "firstname": "Vanessa",
+      "lastname": "Fabricante",
+      "address": "Block 6 Lot 22 Buklod Bahayan Tartaria, Silang, Cavite",
+      "email": "vanessaf@gmail.com",
+      "mobile": "09272612690",
+      "gender": "Male",
+      "birthdate": "January 30, 1989",
+      "active": true
+    },
+    {
+      "firstname": "test",
+      "lastname": "try",
+      "mobile": "09272612690",
+      "email": "try@gmail.com",
+      "gender": "Male",
+      "address": "test",
+      "active": true,
+      "id": 4
+    }
+  ]
+}
